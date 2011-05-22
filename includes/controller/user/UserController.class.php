@@ -74,6 +74,8 @@ class UserController extends Controller {
     }
 	if(trim($userVo->password)!=''){
 	    $userVo->password=MD5($userVo->password);
+	}else{
+		$userVo->password=null;		
 	}
     if (!$userVo->checkOptions($userVo->getUpdateOptions())) {
       View::set("UserUpdateValue", $userVo);
@@ -89,6 +91,8 @@ class UserController extends Controller {
     $userVo->user_id=$_SESSION['user_id'];
 	if(trim($userVo->password)!=''){
 	    $userVo->password=MD5($userVo->password);
+	}else{
+		$userVo->password=null;
 	}
     if (!$userVo->checkOptions($userVo->getUpdateOptions())) {
       View::set("UserUpdateValue", $userVo);
