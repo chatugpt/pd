@@ -387,12 +387,15 @@ class OrdersController extends Controller {
     $ordersService = new OrdersService();
     $messageService = new MessageService();
     $ordersId = intval(Request::get("view_orders_id"));
-    
 
-    //将 该派单设置为 已经查看 
-    Zee::registry("DB")->exec('update orders set status='.Value::STATUS_SEEM .' where order_id= '.$ordersId);
-    //将 该派单的留言设置为 已经查看
-    Zee::registry("DB")->exec('update message set status='.Value::STATUS_SEEM .' where order_id= '.$ordersId);
+    if(isset($_SESSION['user_role']) and  ($_SESSION['user_role']==Value::USER_ROLE_ADMIN or $_SESSION['user_role']==Value::USER_ROLE_ASSIGN)){
+    	
+    }else{
+	    //将 该派单设置为 已经查看 
+	    Zee::registry("DB")->exec('update orders set status='.Value::STATUS_SEEM .' where order_id= '.$ordersId);
+	    //将 该派单的留言设置为 已经查看
+	    Zee::registry("DB")->exec('update message set status='.Value::STATUS_SEEM .' where order_id= '.$ordersId);
+    }
 
     $ordersVo = $ordersService->getByPrimary($ordersId);
     $messageVo=$messageService->getByOderid($ordersId);
