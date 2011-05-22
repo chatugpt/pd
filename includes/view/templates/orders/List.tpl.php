@@ -151,7 +151,9 @@ if(count($outUserList)>0){
 				  <?php }else{?>
 				  <a id="show_order<?php echo $outOrders->order_id;?>" onclick="showDetail(<?php echo $outOrders->order_id;?>);" class="clickevent" href="index.php?module=orders&action=AjaxView&view_orders_id=<?php echo $outOrders->order_id;?>">未查看</a>
 				  <?php }?>
-				<?php  if(isset($_SESSION['user_role']) and  $_SESSION['user_role']==Value::USER_ROLE_ADMIN){ ?><a href="index.php?module=orders&action=update&update_orders_id=<?php echo $outOrders->order_id;?>"><?php Language::show("COMMON.EDIT.LABEL")?></a>
+				<?php  if(isset($_SESSION['user_role']) and  $_SESSION['user_role']==Value::USER_ROLE_ADMIN){ ?>
+				<a href="index.php?module=orders&action=update&update_orders_id=<?php echo $outOrders->order_id;?>"><?php Language::show("COMMON.EDIT.LABEL")?></a>
+				<a onclick="if(confirm('和该派单有关的留言也会一起删除，确认删除该派单？'))location.href='index.php?module=orders&action=delete&delete_orders_id=<?php echo $outOrders->order_id;?>'" href="javascript:void(0);">删除</a>
 				<?php } ?>
 				</td>
 			</tr>

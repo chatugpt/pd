@@ -10,6 +10,13 @@ class OrdersController extends Controller {
   public function doIndex() {
     $this->doList();
   }
+  public function doDelete() {
+    $orders_id = intval(Request::get("delete_orders_id"));
+    $OrdersService=new OrdersService();
+    $OrdersService->deleteByPrimary($orders_id,Value::EQUAL);
+    Zee::registry("DB")->exec('delete from message where order_id= '.$orders_id);
+    Zee::redirect(Zee::url("orders", "list"));
+  }
   public function doList() {
     //list
     $listPageHelper = new ListPageHelper();
@@ -503,11 +510,16 @@ ymPrompt.close();
     $userService = new UserService();
     
     $ordersCondition=new OrdersValue();
-    
+    if($_SESSION['user_role']==Value::USER_ROLE_ADMIN  or $_SESSION['user_role']==Value::USER_ROLE_ASSIGN ){
+    	
+    }else{
+       $ordersCondition->addAssignCondition('%'.$_SESSION['user_role'].'%',Value::LIKE);
+    }
     $userlist=$userService->getlist($userCondition);   
     //get project
     $projectCondition = new ProjectValue();
     $projectService = new ProjectService();
+
     $projectlist = $projectService->getList($projectCondition);
     
 	//按时间范围搜索

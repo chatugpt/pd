@@ -143,6 +143,15 @@ $i=0;
 						</td>
 					</tr>
 					<!-- Field end -->
+					<!-- Field end -->
+					<tr>
+						<td width="194" align="left" valign="top" class="smalltdrow1"><?php Language::show("ORDERS.ADDTIME.LABEL")?></td>
+						<td align="left" class="smalltdrow2">
+<input type="text" class="textinput" name="orders_addtime" value="<?php echo $outOrdersUpdateValue->addtime?>" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"/>
+<?php Errors::show("ADDTIME")?>
+						</td>
+					</tr>
+					<!-- Field end -->
 					<tr>
 						<td width="194" align="left" valign="top" class="smalltdrow1"><?php Language::show("ORDERS.MOBILE.LABEL")?></td>
 						<td align="left" class="smalltdrow2">
@@ -186,7 +195,7 @@ $i=0;
 					<tr>
 						<td width="194" align="left" valign="top" class="smalltdrow1"><?php Language::show("ORDERS.INFO.LABEL")?></td>
 						<td align="left" class="smalltdrow2">
-						<textarea name="orders_info"><?php echo $outOrdersUpdateValue->info?></textarea>
+						<textarea name="orders_info" rows="8" cols="40"><?php echo $outOrdersUpdateValue->info?></textarea>
 <?php Errors::show("INFO")?>
 						</td>
 					</tr>

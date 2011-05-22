@@ -31,9 +31,9 @@ class OrdersService {
     $ordersVo->addPrimaryCondition($value, Value::EQUAL);
     return Zee::registry("DB")->fetch($ordersVo);
   }
-  public function deleteByPrimary($value) {
+  public function deleteByPrimary($value,$condition) {
     $ordersVo = new OrdersValue();
-    $ordersVo->addPrimaryCondition($value);
+    $ordersVo->addPrimaryCondition($value,$condition);
     return Zee::registry("DB")->delete($ordersVo);
   }
 }
