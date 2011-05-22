@@ -15,8 +15,9 @@ echo '<div  id="tooltipbox">
 <form name="actionForm" action="'.zee::url('orders', "ajax_submit") .'" method="post">';
 echo '<input type="hidden"  name="orders_order_id" value="'.$outOrdersUpdateValue->order_id.'" />'; Errors::show("ORDER_ID");
 echo '<p>
-	  <span class="left">'.Language::get("ORDERS.CUSTOMER_ADDRESS.LABEL").'</span><span>'.$outOrdersUpdateValue->customer_address.Errors::show("CUSTOMER_ADDRESS").'</span>
-	  <span class="left">'. Language::get("ORDERS.ASSIGN.LABEL").'</span><span>';Errors::show("ASSIGN");
+	  <span class="left">'.Language::get("ORDERS.CUSTOMER_ADDRESS.LABEL").'</span><span>'.$outOrdersUpdateValue->customer_address.Errors::show("CUSTOMER_ADDRESS").'</span>';
+/*<span class="left">'. Language::get("ORDERS.ASSIGN.LABEL").'</span><span>';
+Errors::show("ASSIGN");
 $outOrdersUpdateValueAssign=explode(',',$outOrdersUpdateValue->assign);
 if(count($outArea)>0){
 	foreach($outArea as $outAreaInfo){
@@ -26,8 +27,9 @@ if(count($outArea)>0){
 	}
 }
 
-echo '</span>
-   </p>  
+*/
+
+echo '</p>  
    <p>
       <span class="left">'.Language::get("ORDERS.PROJECT_ID.LABEL").'</span><span>';
 if(count($projectlist)>0){

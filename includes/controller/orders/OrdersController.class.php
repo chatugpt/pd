@@ -18,6 +18,11 @@ class OrdersController extends Controller {
     $listPageHelper->pageNum = $pageNum?$pageNum:1;
     //Condition
     $ordersCondition = new OrdersValue();
+    if($_SESSION['user_role']==Value::USER_ROLE_ADMIN  or $_SESSION['user_role']==Value::USER_ROLE_ASSIGN ){
+    	
+    }else{
+       $ordersCondition->addAssignCondition('%'.$_SESSION['user_role'].'%',Value::LIKE);
+    }
     //派单显示的模式
     $orderListModel='所有派单';
     switch (Request::get('type')){

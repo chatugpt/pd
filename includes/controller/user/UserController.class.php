@@ -1,6 +1,7 @@
 <?php
 require_once "zee/util/ListPageHelper.class.php";
 require_once "service/UserService.class.php";
+require_once "service/AreaService.class.php";
 
 class UserController extends Controller {
   public function doIndex() {
@@ -17,12 +18,20 @@ class UserController extends Controller {
     //get data
     $userService = new UserService();
     $userList = $userService->getList($userCondition, $listPageHelper);
+    
+    $areaService = new AreaService();
+    $areaList = $areaService->getList(new AreaValue());
+
     //view
+    View::set("AreaList", $areaList);
     View::set("UserList", $userList);
     View::set("ListPageHelper", $listPageHelper);
     View::display("List");
   }
   public function doCreate() {
+    $areaService = new AreaService();
+    $areaList = $areaService->getList(new AreaValue());
+    View::set("AreaList", $areaList);
     View::display("Create");
   }
   public function doDelete() {
@@ -46,9 +55,14 @@ class UserController extends Controller {
     Zee::redirect(Zee::url("user", "list"));
   }
   public function doUpdate() {
+    $areaService = new AreaService();
+    $areaList = $areaService->getList(new AreaValue());
+
     $userService = new UserService();
     $userId = intval(Request::get("update_user_id"));
     $userVo = $userService->getByPrimary($userId);
+    
+    View::set("AreaList", $areaList);
     View::set("UserUpdateValue", $userVo);
     View::display("Update");
   }
@@ -88,9 +102,12 @@ class UserController extends Controller {
   }
 
   public function doView() {
+    $areaService = new AreaService();
+    $areaList = $areaService->getList(new AreaValue());
     $userService = new UserService();
     $userId = intval(Request::get("view_user_id"));
     $userVo = $userService->getByPrimary($userId);
+    View::set("AreaList", $areaList);
     View::set("UserViewValue", $userVo);
     View::display("View");
   }
@@ -127,9 +144,14 @@ class UserController extends Controller {
      Zee::redirect(Zee::url("user", "login"));
   }
   public function doEdit() {
+    $areaService = new AreaService();
+    $areaList = $areaService->getList(new AreaValue());
+
     $userService = new UserService();
     $userId=$_SESSION['user_id'];
     $userVo = $userService->getByPrimary($userId);
+    
+    View::set("AreaList", $areaList);
     View::set("UserUpdateValue", $userVo);
     View::display("Edit");
   }

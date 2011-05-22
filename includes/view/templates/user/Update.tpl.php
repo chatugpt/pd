@@ -3,6 +3,7 @@
 <!-- Form block start -->
 <?php
 $outUserUpdateValue = $inData["UserUpdateValue"];
+$outAreaList=$inData["AreaList"];
 ?>
 
 				<table cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -25,13 +26,16 @@ $outUserUpdateValue = $inData["UserUpdateValue"];
 					<!-- Field end -->
 					<tr>
 						<td width="194" align="left" valign="top" class="smalltdrow1"><?php Language::show("USER.ROLE.LABEL")?></td>
-						<td align="left" class="smalltdrow2">
-<select name="user_role">
+						<td align="left" class="smalltdrow2">		
+<select name="user_role"> 
    <option value="<?php echo Value::USER_ROLE_ADMIN;?>" <?php if(Value::USER_ROLE_ADMIN==$outUserUpdateValue->role) echo 'selected';?>>管理员</option>
-   <option value="<?php echo Value::USER_ROLE_USER ;?>" <?php if(Value::USER_ROLE_USER==$outUserUpdateValue->role) echo 'selected';?>>跟单员</option>
-    <option value="<?php echo Value::USER_ROLE_ASSIGN ;?>" <?php if(Value::USER_ROLE_ASSIGN==$outUserUpdateValue->role) echo 'selected';?>>派单员</option>
-   
-</select>					
+   <option value="<?php echo Value::USER_ROLE_ASSIGN ;?>" <?php if(Value::USER_ROLE_ASSIGN==$outUserUpdateValue->role) echo 'selected';?>>派单员</option>
+<?php 
+foreach ($outAreaList as $v){
+    echo '<option value="'.$v->area_id.'" '.($v->area_id==$outUserUpdateValue->role?'selected':'').'>'.$v->area_name.'跟单员</option>';
+}
+?>
+</select>			
 <?php Errors::show("ROLE")?>
 						</td>
 					</tr>

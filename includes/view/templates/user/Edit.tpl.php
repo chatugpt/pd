@@ -53,7 +53,7 @@ $outUserUpdateValue = $inData["UserUpdateValue"];
 			<!-- action blocks start -->
 				<input type="submit" value="<?php Language::show("COMMON.SAVE.LABEL")?>" class="submit" />
 				&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" onclick="location.href='<?php echo zee::url(user, "list");?>'" value="<?php Language::show("COMMON.BACK.LABEL")?>" class="submit" />
+				<input type="button" onclick="location.href='<?php echo zee::url(user, "edit");?>'" value="<?php Language::show("COMMON.BACK.LABEL")?>" class="submit" />
 			<!-- action blocks end -->
 			</td>
 		</tr>

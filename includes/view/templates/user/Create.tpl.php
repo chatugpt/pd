@@ -3,6 +3,7 @@
 <!-- Form block start -->
 <?php
 $outUserCreateValue = $inData["UserCreateValue"];
+$outAreaList=$inData["AreaList"];
 ?>
 				<table cellspacing="0" cellpadding="0" width="100%" border="0">
 <!-- fields start -->
@@ -18,11 +19,14 @@ $outUserCreateValue = $inData["UserCreateValue"];
 					<tr>
 						<td width="194" align="left" valign="top" class="smalltdrow1"><?php Language::show("USER.ROLE.LABEL")?></td>
 						<td align="left" class="smalltdrow2">
-<select name="user_role">
+<select name="user_role"> 
    <option value="<?php echo Value::USER_ROLE_ADMIN;?>" <?php if(Value::USER_ROLE_ADMIN==$outUserCreateValue->role) echo 'selected';?>>管理员</option>
-   <option value="<?php echo Value::USER_ROLE_USER ;?>" <?php if(Value::USER_ROLE_USER==$outUserCreateValue->role) echo 'selected';?>>跟单员</option>
    <option value="<?php echo Value::USER_ROLE_ASSIGN ;?>" <?php if(Value::USER_ROLE_ASSIGN==$outUserCreateValue->role) echo 'selected';?>>派单员</option>
-   
+<?php 
+foreach ($outAreaList as $v){
+    echo '<option value="'.$v->area_id.'" '.($v->area_id==$outUserCreateValue->role?'selected':'').'>'.$v->area_name.'跟单员</option>';
+}
+?>
 </select>		
 <?php Errors::show("ROLE")?>
 

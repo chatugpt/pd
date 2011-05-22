@@ -5,6 +5,7 @@
 <!-- Form block start -->
 <?php
 $outUserViewValue = $inData["UserViewValue"];
+$outAreaList=$inData["AreaList"];
 ?>
 
 <table class="menutab" cellspacing="0" cellpadding="0" width="100%" border="0">
@@ -31,8 +32,13 @@ if($outUserViewValue->role==Value::USER_ROLE_ADMIN ){
 }elseif($outUserViewValue->role==Value::USER_ROLE_ASSIGN){
 	echo '派单员';
 }else{
-	echo '跟单员';
-}?>
+	foreach ($outAreaList as $v){
+		if($v->area_id==$outUserViewValue->role){
+			echo $v->area_name.'跟单员';
+		}
+	}
+}
+?>
 						</td>
 					</tr>
 					<!-- Field end -->

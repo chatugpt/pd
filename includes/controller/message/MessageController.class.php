@@ -2,6 +2,7 @@
 require_once "zee/util/ListPageHelper.class.php";
 require_once "service/MessageService.class.php";
 require_once "service/UserService.class.php";
+require_once "service/OrdersService.class.php";
 
 class MessageController extends Controller {
   public function doIndex() {
@@ -14,13 +15,37 @@ class MessageController extends Controller {
     $pageNum = intval(Request::get("page"));
     $listPageHelper->pageNum = $pageNum?$pageNum:1;
     //Condition
+
+    
+    
     $messageCondition = new MessageValue();
+    
+    if($_SESSION['user_role']==Value::USER_ROLE_ADMIN  or $_SESSION['user_role']==Value::USER_ROLE_ASSIGN ){
+    	
+    }else{
+		$ordersCondition = new OrdersValue();
+		$ordersCondition->addAssignCondition('%'.$_SESSION['user_role'].'%',Value::LIKE);
+		$ordersService=new OrdersService();
+		$ordersList = $ordersService->getList($ordersCondition);
+		$orderscondition='';
+		foreach ($ordersList as $k=>$v){
+			if($k==count($ordersList)-1){
+		  		$orderscondition .= $v->order_id;
+			}else{
+				$orderscondition .= $v->order_id.',';
+			}
+		}    
+        if($orderscondition!=''){
+           $messageCondition->addOrderIdCondition($orderscondition,'in');   
+        }
+    }
+
     //get data
     $messageService = new MessageService();  
     $userCondition=new UserValue();
     $userService = new UserService();
     $userlist=$userService->getlist($userCondition);   
-        
+
     $messageCondition->addCondition(' 1=1 ORDER BY `message_id` DESC');
     $messageList = $messageService->getList($messageCondition, $listPageHelper);
     //view

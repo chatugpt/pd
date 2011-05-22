@@ -1,5 +1,7 @@
 <?php $outUserList = $inData["UserList"];?>
-<?php $listPageHelper = $inData["ListPageHelper"];?>
+<?php $listPageHelper = $inData["ListPageHelper"];
+$outAreaList=$inData["AreaList"];
+?>
 <div class="bodywrap"> <div id="listbox" style="width: 99%;">
 
 
@@ -52,7 +54,11 @@ if($outUser->role==Value::USER_ROLE_ADMIN ){
 }elseif($outUser->role==Value::USER_ROLE_ASSIGN){
 	echo '派单员';
 }else{
-	echo '跟单员';
+	foreach ($outAreaList as $v){
+		if($v->area_id==$outUser->role){
+			echo $v->area_name.'跟单员';
+		}
+	};
 }?>
 				  </td>
 				  <td align="left" class="smalltdrow2">
