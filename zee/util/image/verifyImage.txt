@@ -1,0 +1,41 @@
+
+1. genVCImage.php
+-----------------
+<?
+$APP_ROOT = dir(__FILE__);
+global $APP_ROOT;
+require_once('paf/util/imageVerificationCodeImage.class.php');
+VerificationCodeImage::genPNGImage();
+?>
+
+
+
+
+2. In HTML Form, add the image of verification code 
+------------------------------------------------
+<tr> 
+	<td valign="top" width="120" class="fieldLabel"><?Messager::show("EASY_BILLING.COMMON.VERIFICATION_CODE.LABEL");?></td>
+	 		<td width="16"><img src="images/BLANK.GIF" width="16" height="16"></td>
+	   		<td valign="top" align="left">
+				<input type="text" name="VERIFICATION_CODE" class="textField" size= "8">
+				<?$errors->show("EASY_BILLING.COMMON.VERIFICATION_CODE_NOT_MATCH.ERROR");?>
+				<br>
+
+				<img src="genVCImage.php">
+
+          	</td>
+          	<td valign="top">		</td>
+       </tr>
+
+
+
+
+3. in Action add following codes for check the code
+=============================================
+
+if(!VerificationCodeImage::checkVerficationCode())
+{
+	$error = MessageUtil::getErrorInstance('EASY_BILLING.COMMON.VERIFICATION_CODE_NOT_MATCH.ERROR');
+	$this->_errors->add($error);
+	return false;
+}

@@ -1,0 +1,128 @@
+*{ margin:0;padding:0;border:0;list-style:none;}
+html,body{height:100%;display:block;}
+body {font:normal 12px/22px  Simsun,Verdana, Tahoma, Arial, sans-serif;text-align:center;color:#282c38;background:url(../images/login-header.gif) repeat-x 0 0; padding:0; margin:0;}
+h2,h3,h4,h5,h6{font:normal 12px/180% arial,Simsun,Verdana, Tahoma;display:inline;}
+
+a:link{color:#282c38;text-decoration:none;}
+a:visited{color:#1a1a1a;text-decoration:none;}
+a:hover{color:#282c38;text-decoration:underline;}
+a:active{color:#282c38;text-decoration:none;}
+
+.clear{height:0;visibility:hidden;display:block;clear:both;overflow:hidden;}
+.zoom{height:100%;zoom:1;overflow:hidden;}
+.strong{font-weight:600}
+.blue{color:#0173ba}
+.red{color:#e5313c}
+.wrap{height:90px;background:url(../images/top-header.gif) repeat-x 0 100%;min-width:780px;}
+#logo{padding:10px 0 0 10px;float:left;}
+.centerbox{float:left;width:464px;height:71px;background:url(../images/header-wrap.gif) no-repeat 0 bottom;}
+.centerbox div{margin-top:10px;text-align:left;padding-left:85px;}
+.centerbox .bigheight{height:30px;line-height:30px;}
+.centerbox #pDate{margin-right:15px}
+.rightitle{height:71px;float:right;_width:370px;background:url(../images/rightitle2.gif) repeat-x left bottom;}
+.rightitle div{height:71px;background:url(../images/rightitle.gif) no-repeat left bottom;}
+.rightitle img{margin:5px 10px 0 0;height:40px;}
+
+#outbtn{position:absolute;right:15px;top:65px;z-index:65536}
+
+
+
+/*--------------------------------------left ---------------------*/
+
+#leftblock{ background: none repeat scroll 0 0 #3985C1;color: #0374BA;font: 12px/22px Simsun,Verdana,Tahoma,Arial,sans-serif;text-align: center; height:100%; overflow:auto;}
+
+a:link{color:#282c38;text-decoration:none;}
+a:visited{color:#1a1a1a;text-decoration:none;}
+a:hover{color:#282c38;text-decoration:underline;}
+a:active{color:#282c38;text-decoration:none;}
+
+a.redlink:link{color:#ff0000;text-decoration:none;}
+a.redlink:visited{color:#1a1a1a;text-decoration:none;}
+a.redlink:hover{color:#ff0000;text-decoration:underline;}
+a.redlink:active{color:#ff0000;text-decoration:none;}
+
+.clear{height:0;visibility:hidden;display:block;clear:both;overflow:hidden;}
+.zoom{height:100%;zoom:1;overflow:hidden;}
+.strong{font-weight:600}
+.blue{color:#0173ba}
+.red{color:#e5313c}
+
+
+#sidebar{width:158px;float:left;height:99%;border:1px solid #74a5ce;background:#fff}
+.sidewrap{border:1px solid #397eb5;margin:5px;text-align:left;}
+.sidewrap h3{font-weight:600;cursor:pointer;background:url(../images/sideh3.gif) repeat-x;display:block;height:28px;line-height:28px;_padding-top:6px;_height:22px;border-bottom:1px solid #397eb5;}
+.sidewrap h3 img{margin:0 5px;}
+#loginaction{padding:0;}
+.sidewrap ul{padding:10px 0;}
+.sidewrap ul li{background:url(../images/sideli.gif) no-repeat 50% bottom;padding-left:10px;}
+.sidewrap ul li:hover{background:#d8e9fd url(../images/sideli.gif) no-repeat 50% bottom;padding-left:10px;font-weight:600}
+.sidewrap ul li a{background:url(../images/folder.gif) no-repeat 0 50%;padding-left:18px;color:#0374ba}
+#nowrap,.nobottom{border-bottom:none}
+#all h3{height:28px;line-height:28px;_padding-top:6px;_height:22px;_line-height:22px;}
+#all h3 a{display:block;height:28px;_height:22px;}
+#all h3 img{vertical-align:middle}
+
+#control{width:10px;float:left;height:96%;}
+#control img{margin-top:250px;}
+
+
+
+/*--------------------------------------end left ---------------------*/
+
+
+/*---------------------------------body---------------------*/
+.clear{height:0;visibility:hidden;display:block;clear:both;overflow:hidden;}
+.zoom{height:100%;zoom:1;overflow:hidden;}
+.strong{font-weight:600}
+.blue{color:#0173ba}
+.red{color:#e5313c}
+
+.bodywrap{text-align:left;padding:10px;}
+.bodywrap .strong{margin:0 20px;}
+.bodywelcome{margin-right:50px;color:#000}
+
+#listbox .checked{color:#666}
+#listbox .checking,#listbox .checking a{font-weight:600;color:#e15200;}
+#listbox .isview,#listbox .isview a{color:#0374ba}
+#listbox .regid{width:10%;}
+#listbox .state{width:6%;}
+#listbox .ptype{width:10%;}
+#listbox .stype{width:5%;}
+#listbox .hos{width:20%;height:25px;overflow:hidden}
+#listbox .regname{width:8%;height:25px;overflow:hidden;}
+#listbox .province{width:10%;}
+#listbox .lookit{width:8%}
+#listbox .date{width:16%;height:25px;overflow:hidden;}
+#listbox table{border-top:1px solid #eae9e9;border-left:1px solid #eae9e9;}
+#listbox tr{line-height:30px;}
+#listbox tr td{padding:0 0 0 5px;border-right:1px solid #eae9e9;border-bottom:1px solid #eae9e9;vertical-align:top;}
+.pageindex{text-align:center;}
+.checking{border-bottom:1px solid #3777b7;padding-left:2px;}
+.checked{border-bottom:1px solid #3777b7;font-weight:600;color:#000;padding-left:2px;}
+
+#tooltipbox{display:block;clear:both;width:auto;color:#282c3; text-align:left;}
+#tooltipbox textarea{width:300px;height:150px;}
+#tooltipbox p,#paidanbox p{display:block;clear:both;width:98%;padding:1%;}
+#tooltipbox h4{font-weight:600;padding-left:15px;}
+#tooltipbox .comm{border-top:1px solid #fff;}
+#tooltipbox .comm li{border-bottom:1px solid #fff;}
+#tooltipbox .comm li.hospital{background:#fac898}
+.userinfo{background:#d8e9fd;border-bottom:1px solid #4f9fd0;padding:10px 0;height:22px;width:100%;display:block;clear:both}
+#tooltipbox .left{background:url(../images/dot2.gif) no-repeat 15px 50%;padding:0 10px 0 30px;}
+
+#ico01{background:url(../images/ico01.jpg) no-repeat 0 50%;padding:3px 0 3px 25px}
+#ico02{margin-left:100px;background:url(/images/ico02.jpg) no-repeat 0 50%;padding:3px 0 3px 20px}
+
+.inputEdit{border:1px solid #ccc;font-size:12px;}
+.inputRead{border:1px solid #000;font-size:12px;}
+
+#paidanbox{border:1px solid #3777b7;width:500px;background:#fff;padding-bottom:10px;}
+#paidanbox input,#paidanbox textarea{border:1px solid #c0c0c0}
+#paidanbox textarea{width:300px;height:100px;}
+.btn{background:url(../images/sideh3.gif);padding:0 20px;margin-left:30px}
+/*---------------------------------body---------------------*/
+
+#seabox{margin-top:50px;}
+#seabox .btn{background:url(../images/sideh3.gif);padding:0 20px;margin-left:30px}
+input , select,textarea{border: 1px solid #74A5CE;}
+.ym-body ,#tooltipbox{ overflow-y: auto;}

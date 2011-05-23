@@ -1,0 +1,37 @@
+/* CSS Document */
+
+*{ margin:0;padding:0;border:0;list-style:none;}
+html,body{height:100%;display:block;}
+body {font:normal 12px/22px  Simsun,Verdana, Tahoma, Arial, sans-serif;text-align:center;color:#282c38;}
+h2,h3,h4,h5,h6{font:normal 12px/180% arial,Simsun,Verdana, Tahoma;display:inline;}
+
+a:link{color:#282c38;text-decoration:none;}
+a:visited{color:#1a1a1a;text-decoration:none;}
+a:hover{color:#282c38;text-decoration:underline;}
+a:active{color:#282c38;text-decoration:none;}
+
+.clear{height:0;visibility:hidden;display:block;clear:both;overflow:hidden;}
+.zoom{height:100%;zoom:1;overflow:hidden;}
+.strong{font-weight:600}
+
+.header{height:18px;background:url(../images/login-header.gif) repeat-x 0 0;}
+
+.wrap{height:80%;border-top:1px solid #ccc;}
+
+.leftbox{text-align:right;width:48%;overflow:hidden;float:left;height:100%;background:url(../images/login-left.jpg) no-repeat 100% 0}
+#logo{padding:10px 440px 0 0px;}
+#keyword{padding:250px 40px 0 0;}
+#keyword span{display:none;}
+
+.rightbox{width:48%;overflow:hidden;text-align:left;float:left;height:100%;background:url(../images/login-right.jpg) no-repeat 0 0}
+.rightbox form{margin:0 auto;padding-top:100px;width:300px;;font-size:20px;}
+.rightbox form p{padding:0 3px;}
+.checkbox{margin:10px 0 10px 50px;}
+.rightbox form label{font-weight:600}
+.rightbox form a{text-decoration:underline;margin-left:20px;}
+.hasborder{border:1px solid #3e91e1;height:25px;line-height:24px;font-size:20px;}
+
+.footer{padding:50px 20px 0 20px;background:url(../images/footer.gif) repeat-x 0 0;height:44px;line-height:44px;}
+.footer .left{float:left}
+.footer .right{float:right;}
+

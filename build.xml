@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Generator" default="main" basedir=".">
+	
+	<!--
+	#==============================================
+	#-check Property table
+	#==============================================	
+	-->
+	<fail unless="table" message="Detected error, table can not null!" />
+	<!--
+	#==============================================
+	#-taskdef
+	#==============================================	
+	-->
+	<taskdef name="generate" classname="generator.classes.GenerateTack" />
+	<!--
+	#==============================================
+	#-main target
+	#==============================================
+	-->
+	<target	name="main"	description="==>build codes">
+		<!-- <phingcall target="init"/> -->
+		<echo message="/----------------------------------\"/>
+		<echo message="| GENERATE CODES DAO VO VIEW		  |"/>
+		<echo message="\----------------------------------/"/>
+		<generate table="${table}" />
+	</target>
+</project>
