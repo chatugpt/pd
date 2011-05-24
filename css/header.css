@@ -127,4 +127,4 @@ a.redlink:active{color:#ff0000;text-decoration:none;}
 input , select,textarea{border: 1px solid #74A5CE;}
 .ym-body ,#tooltipbox{ overflow-y: auto;}
 
-.success_box {background:#EBFEDF url(../images/icon_success.gif) 20px 10px no-repeat; border:1px solid #859802;color:#666;}
+.success_box {background:#EBFEDF url(../images/icon_success.gif) 20px 10px no-repeat; border:1px solid #859802;color:#666;font-size:12px; font-weight:bold;padding:15px 10px 15px 60px; margin:10px 0;}

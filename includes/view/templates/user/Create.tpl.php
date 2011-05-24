@@ -20,7 +20,9 @@ $outUserCreateValue = $inData["UserCreateValue"];
 						<td align="left" class="smalltdrow2">
 <select name="user_role">
    <option value="<?php echo Value::USER_ROLE_ADMIN;?>" <?php if(Value::USER_ROLE_ADMIN==$outUserCreateValue->role) echo 'selected';?>>管理员</option>
-   <option value="<?php echo Value::USER_ROLE_USER ;?>" <?php if(Value::USER_ROLE_USER==$outUserCreateValue->role) echo 'selected';?>>普通用户</option>
+   <option value="<?php echo Value::USER_ROLE_USER ;?>" <?php if(Value::USER_ROLE_USER==$outUserCreateValue->role) echo 'selected';?>>跟单员</option>
+   <option value="<?php echo Value::USER_ROLE_ASSIGN ;?>" <?php if(Value::USER_ROLE_ASSIGN==$outUserCreateValue->role) echo 'selected';?>>派单员</option>
+   
 </select>		
 <?php Errors::show("ROLE")?>
 

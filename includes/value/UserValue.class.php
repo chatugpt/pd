@@ -15,6 +15,15 @@ class UserValue extends UserValueBase {
   }
 
   public function getUpdateOptions() {
-    return $this->getCreateOptions();
+       return array(
+      "created" => ""
+      ,"modified" => ""
+      ,"status" => ""
+	   	,"user_id" =>"required:ERROR.REQUIRED;"
+	   	,"role" => ""
+	   	,"username" => ""
+	   	,"password" => ""
+	   	,"realname" => ""
+      );
   }
 }

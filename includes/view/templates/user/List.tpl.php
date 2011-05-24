@@ -49,8 +49,10 @@ if(count($outUserList)>0)
 <?php 
 if($outUser->role==Value::USER_ROLE_ADMIN ){
 	echo '管理员';
+}elseif($outUser->role==Value::USER_ROLE_ASSIGN){
+	echo '派单员';
 }else{
-	echo '普通用户';
+	echo '跟单员';
 }?>
 				  </td>
 				  <td align="left" class="smalltdrow2">

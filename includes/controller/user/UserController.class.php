@@ -82,7 +82,7 @@ class UserController extends Controller {
       return;
     }
     $userVo = $userService->updateByPrimary($userVo);
-    Messages::addUserMessage('<div class="success_box">更新成功</div>');
+    View::set('message','<div class="success_box">更新成功</div>');
     View::set("UserUpdateValue", $userVo);
      View::display("Edit");
   }

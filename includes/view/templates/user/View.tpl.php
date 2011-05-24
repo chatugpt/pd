@@ -28,8 +28,10 @@ $outUserViewValue = $inData["UserViewValue"];
 					<?php 
 if($outUserViewValue->role==Value::USER_ROLE_ADMIN ){
 	echo '管理员';
+}elseif($outUserViewValue->role==Value::USER_ROLE_ASSIGN){
+	echo '派单员';
 }else{
-	echo '普通用户';
+	echo '跟单员';
 }?>
 						</td>
 					</tr>

@@ -1,6 +1,11 @@
 <div class="bodywrap"> <div id="listbox" style="width: 99%;">
 <form name="actionForm" action="<?php echo zee::url('user', "edit_submit");?>" method="post">
-<div class=""
+<?php
+$message=$inData['message'];
+if($message!=''){
+	echo $message;
+}else{
+?>
 <!-- Form block start -->
 <?php
 $outUserUpdateValue = $inData["UserUpdateValue"];
@@ -55,5 +60,5 @@ $outUserUpdateValue = $inData["UserUpdateValue"];
 	</tbody>
 </table>
 <!-- Form block end -->
-
+<?php } ?>
 </form></div></div>

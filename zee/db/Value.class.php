@@ -42,12 +42,13 @@ abstract class Value {
   
   /**
    * 用户角色
-   *1 普通用户 派单 留言 查询 导出
+   *1 普通用户 留言 查询 导出
    *2 总管理员 权限（项目管理 派往地区管理 管理员管理 +普通用户权限）
-   * 
+   *3派单员 留言 查询 导出
    */
   const USER_ROLE_USER=1;
   const USER_ROLE_ADMIN=2;
+  const USER_ROLE_ASSIGN=3;
 
 
   public $conditions = array();

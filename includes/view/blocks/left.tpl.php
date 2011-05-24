@@ -9,7 +9,9 @@
 		<li><a href="index.php?module=orders&type=month">本月派单</a></li>
 		<li><a href="index.php?module=orders&type=year">今年派单</a></li>
 		<li><a href="index.php?module=orders&action=search">自定义查询</a></li>
+<?php if(isset($_SESSION['user_role']) and  ($_SESSION['user_role']==Value::USER_ROLE_ADMIN or $_SESSION['user_role']==Value::USER_ROLE_ASSIGN)){?>		
 		<li><a id="newOrder" href="index.php?module=orders&action=create">新派单</a></li>
+<?php } ?>
 		<li><a id="newComment" href="index.php?module=message&action=newlist">新留言</a></li>
 		<li><a id="todayComment" href="index.php?module=message&type=today">今日留言</a></li>
 				<li><a id="" href="index.php?module=orders&action=export">派单导出</a></li>
