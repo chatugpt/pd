@@ -45,7 +45,7 @@ echo '</span>
    </p>
    <p>
      <span class="left">'.Language::get("ORDERS.HIS.LABEL").'</span><span><input type="text" class="textinput" name="orders_HIS" value="'. $outOrdersUpdateValue->HIS.'" />'.Errors::show("HIS").'</span>
-     <span class="left">'.Language::get("ORDERS.TELEPHONE.LABEL").'</span><span>'.($outOrdersUpdateValue->Telephone==''?'<input type="text" class="textinput" name="orders_telephone" value="'. $outOrdersUpdateValue->Telephone.'" />':$outOrdersUpdateValue->Telephone).Errors::show("TELEPHONE").'</span>
+     <span class="left">'.Language::get("ORDERS.TELEPHONE.LABEL").'</span><span>'.($outOrdersUpdateValue->telephone==''?'<input type="text" class="textinput" name="orders_telephone" value="'. $outOrdersUpdateValue->telephone.'" />':$outOrdersUpdateValue->telephone).Errors::show("TELEPHONE").'</span>
    </p>				
    <p id="oldcheck">
       <span class="left">'.Language::get("ORDERS.OPERATE_STATUS.LABEL").'</span>

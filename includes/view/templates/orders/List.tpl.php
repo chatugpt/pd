@@ -75,7 +75,7 @@ if(count($outOrdersList)>0)
 //			$rowCssName = "oddRow";
 //		}
 ?>
-			<tr <?php if($outOrders->status==Value::STATUS_NOT_SEE ){ echo 'class="checking"';} ?>>
+			<tr <?php if($outOrders->contact_status==Value::STATUS_NOT_SEE ){ echo 'class="checking"';} ?>>
 							  <td align="left" class="smalltdrow2">
 <?php echo $outOrders->addtime?>
 				  </td>
@@ -146,7 +146,7 @@ if(count($outUserList)>0){
 				  </td>
 
 				  <td align="center" class="smalltdrow2">
-				  <?php if($outOrders->status==Value::STATUS_SEEM){ ?>
+				  <?php if($outOrders->contact_status==Value::STATUS_SEEM){ ?>
 				  <a id="show_order<?php echo $outOrders->order_id;?>" onclick="showDetail(<?php echo $outOrders->order_id;?>);" class="clickevent" href="index.php?module=orders&action=AjaxView&view_orders_id=<?php echo $outOrders->order_id;?>">已查看</a>
 				  <?php }else{?>
 				  <a id="show_order<?php echo $outOrders->order_id;?>" onclick="showDetail(<?php echo $outOrders->order_id;?>);" class="clickevent" href="index.php?module=orders&action=AjaxView&view_orders_id=<?php echo $outOrders->order_id;?>">未查看</a>
