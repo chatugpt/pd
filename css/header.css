@@ -126,3 +126,5 @@ a.redlink:active{color:#ff0000;text-decoration:none;}
 #seabox .btn{background:url(../images/sideh3.gif);padding:0 20px;margin-left:30px}
 input , select,textarea{border: 1px solid #74A5CE;}
 .ym-body ,#tooltipbox{ overflow-y: auto;}
+
+.success_box {background:#EBFEDF url(../images/icon_success.gif) 20px 10px no-repeat; border:1px solid #859802;color:#666;}

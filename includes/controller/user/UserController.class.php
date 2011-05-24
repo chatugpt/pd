@@ -58,17 +58,35 @@ class UserController extends Controller {
     if($userVo->user_id==''){
     	$userVo->user_id=$_SESSION['user_id'];
     }
-	if($userVo->password!=''){
+	if(trim($userVo->password)!=''){
 	    $userVo->password=MD5($userVo->password);
 	}
-    if (!$userVo->checkOptions($userVo->getCreateOptions())) {
+    if (!$userVo->checkOptions($userVo->getUpdateOptions())) {
       View::set("UserUpdateValue", $userVo);
       View::display("Update");
       return;
     }
     $userVo = $userService->updateByPrimary($userVo);
-    Zee::redirect(Zee::url("user", "list"));
+    Zee::redirect(Zee::url("user", "list"));  
   }
+  public function doEditSubmit() {
+    $userService = new UserService();
+    $userVo = Request::getValue("user", "UserValue");
+    $userVo->user_id=$_SESSION['user_id'];
+	if(trim($userVo->password)!=''){
+	    $userVo->password=MD5($userVo->password);
+	}
+    if (!$userVo->checkOptions($userVo->getUpdateOptions())) {
+      View::set("UserUpdateValue", $userVo);
+      View::display("Edit");
+      return;
+    }
+    $userVo = $userService->updateByPrimary($userVo);
+    Messages::addUserMessage('<div class="success_box">更新成功</div>');
+    View::set("UserUpdateValue", $userVo);
+     View::display("Edit");
+  }
+
   public function doView() {
     $userService = new UserService();
     $userId = intval(Request::get("view_user_id"));

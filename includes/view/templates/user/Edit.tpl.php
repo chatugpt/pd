@@ -1,5 +1,6 @@
 <div class="bodywrap"> <div id="listbox" style="width: 99%;">
-<form name="actionForm" action="<?php echo zee::url(user, "update_submit");?>" method="post">
+<form name="actionForm" action="<?php echo zee::url('user', "edit_submit");?>" method="post">
+<div class=""
 <!-- Form block start -->
 <?php
 $outUserUpdateValue = $inData["UserUpdateValue"];
