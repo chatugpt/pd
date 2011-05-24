@@ -4,6 +4,6 @@ require_once "service/MessageService.class.php";
 
 class IndexController extends Controller {
   public function doIndex() {
-    View::display("Index");
+    Zee::redirect(Zee::url('orders','list'));
   }
 }
